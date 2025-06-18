@@ -3,3 +3,18 @@
 # Placeholder function:
 # function display_products()
 
+function filter_products(filters):
+	filtered_products = product_list
+	
+	# Define filter categories
+	num_categories = ["width", "height", "length", "weight"]
+	text_categories = ["name", "color", "brand"]
+	
+	for cat, value in filters.items():
+		if cat in num_categories:
+			filtered_products = [p for p in filtered_products if p[cat] == value]
+			
+		elif cat in text_categories():
+			filtered_products = [p for p in filtered_products if p[cat] == value]
+			
+	return filtered_products
