@@ -3,3 +3,22 @@
 # Placeholder function:
 # function display_products()
 
+function filter_products(filters):
+	filtered_products = product_list
+	
+	# Define filter categories
+	num_categories = ["width", "height", "length", "weight"]
+	text_categories = ["name", "color", "brand"]
+	
+	# Loops through each category found in filters input
+	for cat, value in filters.items():
+	
+		# Checks for exact matches in the numerical categories
+		if cat in num_categories:
+			filtered_products = [p for p in filtered_products if p[cat] == value]
+			
+		# Checks for matches in text categories with case-sensitive handling
+		elif cat in text_categories():
+			filtered_products = [p for p in filtered_products if str(p[cat]).lower() == str(value).lower()]
+			
+	return filtered_products
