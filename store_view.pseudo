@@ -15,6 +15,6 @@ function filter_products(filters):
 			filtered_products = [p for p in filtered_products if p[cat] == value]
 			
 		elif cat in text_categories():
-			filtered_products = [p for p in filtered_products if p[cat] == value]
+			filtered_products = [p for p in filtered_products if str(p[cat]).lower() == str(value).lower()]
 			
 	return filtered_products
