@@ -3,6 +3,65 @@
 # This file ties together all components of the pseudo-shop
 # Feel free to modify this to simulate application flow
 
-# Run the app
-print "Welcome to the Pseudo Shop!"
+function main():
+
+	# Run the app
+	print "Welcome to the Pseudo Shop!"
+
+	# Check if new user
+	newUser = input("Are you a new user?")
+
+	# Register if new user
+	if newUser:
+		# User signup
+		name = input("Enter your name:")
+		email = input("Enter your email:")
+		password = input("Enter your password:")
+	
+		success = create_user(name, email, password)
+		if success:
+			print("User created successfully.")
+		else:
+			print("User already exists.")
+		
+	# User login
+	loginEmail = input("Login - Enter your email:")
+	loginPassword = input("Login - Enter your password:")
+	
+	
+	user = login_user(loginEmail, loginPassword)
+	
+	# Validate user
+	if user = None:
+		print("User does not exist. Exiting...")
+		return
+		
+	# Ask if user want to add product
+	
+	addProduct = 	input ("Do you want to add a product")
+	if addProduct == "Y":
+	
+		# Add sample product
+		print("Let's add a product to the store")
+		productName = input("Enter product name:")
+		productWidth = input("Enter product width:")
+		productLength = input("Enter product length:")
+		productHeight = input("Enter product height:")
+		productBrand = input("Enter product brand:")
+		productColor = input("Enter product color:")
+		productPrice = input("Enter product price:")
+		
+		add_product(productName, productWidth, productLength, productHeight, productBrand, productColor, productPrice)
+		
+	# Display products
+	print("How would you like to sort the products to be displayed?")
+	sortBy = input("Sort by (name, brand, price, etc.): ")
+	order = input("Order (asc or desc): ")
+	
+	display_products(sortBy, order)
+		
+	
+# Run the program
+main()
+	
 

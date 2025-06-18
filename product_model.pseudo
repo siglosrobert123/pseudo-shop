@@ -1,15 +1,14 @@
 # Handles product data
 
-# Sample structure:
-# product = {
-#     name: "Sample Product",
-#     width: 10,
-#     height: 5,
-#     length: 20,
-#     weight: 1.5,
-#     color: "red",
-#     brand: "Generic"
-# }
+#Product Class with attributes
+class Product:
+	name
+	width
+	height
+	length
+	weight
+	color
+	brand
 
 # Placeholder product list
 product_list = []

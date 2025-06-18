@@ -4,3 +4,41 @@
 # function create_user(name, email, password)
 # function login_user(email, password)
 
+# Initializing empty list for in-memory structure
+user_list = []
+
+# Function to create a user
+function create_user(name, email, password):
+
+	# Checks for existing email to avoid duplicates
+	for user in user_list:
+		if user["email"] == email:
+			return False
+	
+	# Formats credentials in a dictionary for storing
+	new_user = {
+		"id" : len(user_list) + 1,
+		"name": name,
+		"email": email,
+		"password": password
+	}
+	
+	# Appends new_user to the in-memory structure
+	user_list.append(new_user)
+	return True
+
+# Function for user login	
+function login_user(email, password):
+	
+	# loops through in-memory structure to check for matching credentials
+	for user in user_list:
+		if user["email"] == email and user["password"] == password:
+			print("Successfully logged in.")
+			print("Welcome, {user["name"]}")
+			return user
+			
+	# If no match is found, prints this message
+	print("Failed to login.")
+	print("Please check your credentials.")
+	return None
+	

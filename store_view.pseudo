@@ -1,7 +1,26 @@
 # Displays product listings
 
-# Placeholder function:
-# function display_products()
+# Displays products that are listed on product_list
+function display_products():
+	print "Welcome to the storefront! Browse available products below:"
+	print "==========================================================="
+	for each product in product_list:
+		print product.name + " - PhP" + product.price
+		print "Size: " + product.width + " x " + product.length + " x " + product.height 
+		print "Brand: " + product.brand
+		print "Color: " + product.color 
+
+# Overload display_products that are listed on product_list
+function display_products(sortBy, order):
+	print "Welcome to the storefront! Browse available products below:"
+	print "==========================================================="
+	
+	# Use sort by to sort the list by certain product detail with order indicating if ascending or descending
+	for each product in sort(product_list, sortBy, order):
+		print product.name + " - PhP" + product.price
+		print "Size: " + product.width + " x " + product.length + " x " + product.height 
+		print "Brand: " + product.brand
+		print "Color: " + product.color 
 
 function filter_products(filters):
 	filtered_products = product_list
@@ -22,3 +41,4 @@ function filter_products(filters):
 			filtered_products = [p for p in filtered_products if str(p[cat]).lower() == str(value).lower()]
 			
 	return filtered_products
+
