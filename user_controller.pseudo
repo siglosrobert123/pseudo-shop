@@ -8,7 +8,7 @@ user_list = []
 
 function create_user(name, email, password):
 	for user in user_list:
-		if user.email == email:
+		if user["email"] == email:
 			return False
 	
 	new_user = {
@@ -20,4 +20,14 @@ function create_user(name, email, password):
 	
 	user_list.append(new_user)
 	return True
+	
+function login_user(email, password):
+	for user in user_list:
+		if user["email"] == email and user["password"] == password:
+			print("Successfully logged in.")
+			print("Welcome, {user["name"]}")
+			return user
+	print("Failed to login.")
+	print("Please check your credentials.")
+	return None
 	
