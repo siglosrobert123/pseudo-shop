@@ -1,6 +1,11 @@
 
 # Function to add a new product to the product list
 function add_product(name, width, height, length, weight, color, brand, price):
+
+	# Validate required fields
+	if name = "" or price = "" or brand = "":
+		print "Error: Product must have a name, price and brand"
+		return
 	
 	product = Product(name, width, height, length, weight, color, brand, price)
 	product_list.append(product)
