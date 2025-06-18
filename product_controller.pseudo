@@ -1,0 +1,6 @@
+
+# Function to add a new product to the product list
+function add_product(name, width, height, length, weight, color, brand, price):
+	
+	product = Product(name, width, height, length, weight, color, brand, price)
+	product_list.append(product)
