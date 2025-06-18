@@ -1,5 +1,12 @@
 # Displays product listings
 
-# Placeholder function:
-# function display_products()
+# Displays products that are listed on product_list
+function display_products():
+	print "Welcome to the storefront! Browse available products below:"
+	print "==========================================================="
+	for each product in product_list:
+		print product.name + " - PhP" + product.price
+		print "Size: " + product.width + " x " + product.length + " x " + product.height 
+		print "Brand: " + product.brand
+		print "Color: " + product.color 
 
